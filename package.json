@@ -1,0 +1,25 @@
+{
+  "name": "sams-personal-resources",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Sam's personal resources page — standalone, unaffiliated with the Samcast MLB dashboard.",
+  "dependencies": {
+    "@types/react": "^19.1.11",
+    "@types/react-dom": "^19.1.8",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "scripts": {
+    "dev": "vite",
+    "start": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "@vitejs/plugin-react": "^4.7.0",
+    "typescript": "^5.9.3",
+    "vite": "^6.4.3"
+  }
+}
