@@ -5,7 +5,8 @@
 // partially-filled page still looks finished.
 
 import type { IconName } from './icons';
-import headshot from './assets/twitter_headshot.jpg';
+import headshot from './assets/about/headshot.jpg';
+import resume from './assets/about/resume.pdf';
 
 /** Set to false before publishing. */
 export const DRAFT = true;
@@ -45,7 +46,7 @@ export const SOCIALS: Social[] = [
 ];
 
 /** Path or URL to the resume. Empty renders a draft placeholder. */
-export const RESUME_URL: string = '';
+export const RESUME_URL: string = resume;
 
 /** The longer story of getting into the field. One string per paragraph. */
 export const JOURNEY: string[] = [];

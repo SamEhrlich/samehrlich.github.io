@@ -210,8 +210,8 @@ const AboutPage: React.FC = () => {
             <a
               className="about-cta is-secondary"
               href={RESUME_URL}
-              target={RESUME_URL.startsWith('http') ? '_blank' : undefined}
-              rel={RESUME_URL.startsWith('http') ? 'noreferrer' : undefined}
+              target="_blank"
+              rel="noreferrer"
             >
               <Icon name="resume" />
               Resume
