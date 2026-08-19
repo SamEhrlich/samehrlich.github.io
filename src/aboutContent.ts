@@ -34,10 +34,6 @@ export const PROFILE = {
   tagline: 'Baseball Operations Analyst — Driveline Baseball' as string,
   /** Import an image into src/assets/ and assign it here; falls back to initials when empty. */
   headshot: headshot,
-  /** Brief career overview. One string per paragraph. */
-  overview: [
-    'I build the models and tools behind data-driven player development: component-based pitch models, swing and biomechanics research, and computer vision for high-speed footage. Previously a data analyst for Missouri Baseball. Research presented at SABR and Saberseminar.',
-  ] as string[],
 };
 
 export const SOCIALS: Social[] = [

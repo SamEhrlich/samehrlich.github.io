@@ -130,16 +130,7 @@ a.about-viewswitch-link:focus-visible {
   margin-bottom: 0;
 }
 
-.about-overview {
-  margin-top: 14px;
-}
 
-.about-overview p {
-  max-width: 580px;
-  font-size: 0.92rem;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 .about-journey p {
   font-size: 1rem;

@@ -209,22 +209,6 @@ const AboutPage: React.FC = () => {
           )
         )}
 
-        {PROFILE.overview.length > 0 ? (
-          <div className="about-prose about-overview">
-            {PROFILE.overview.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
-        ) : (
-          DRAFT && (
-            <Slot
-              label="Career overview"
-              source="PROFILE.overview"
-              hint="One or two short paragraphs — one string per paragraph"
-            />
-          )
-        )}
-
         <div className="about-links">
           {SOCIALS.map((social) => (
             <a
