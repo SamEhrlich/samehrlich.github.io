@@ -36,7 +36,6 @@ const SUGGESTED_SOCIALS: { label: string; icon: IconName }[] = [
   { label: 'X', icon: 'x' },
   { label: 'LinkedIn', icon: 'linkedin' },
   { label: 'Email', icon: 'email' },
-  { label: 'YouTube', icon: 'youtube' },
 ];
 
 const EntrySection: React.FC<{
@@ -135,11 +134,7 @@ const AboutPage: React.FC = () => {
       <header className="about-hero">
         <div className={`about-hero-media${PROFILE.headshot ? '' : ' is-empty'}`}>
           {PROFILE.headshot ? (
-            <img
-              src={PROFILE.headshot}
-              alt={PROFILE.name}
-              style={{ objectPosition: PROFILE.headshotPosition }}
-            />
+            <img src={PROFILE.headshot} alt={PROFILE.name} />
           ) : (
             <span className="about-hero-initials">{initials}</span>
           )}

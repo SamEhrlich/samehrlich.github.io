@@ -33,8 +33,6 @@ export const PROFILE = {
   tagline: '' as string,
   /** Import an image into src/assets/ and assign it here; falls back to initials when empty. */
   headshot: headshot,
-  /** CSS object-position for the headshot crop, e.g. '75% 30%' to favour the right side. */
-  headshotPosition: 'center',
   /** Brief career overview. One string per paragraph. */
   overview: [] as string[],
 };
