@@ -1,5 +1,6 @@
 import React from 'react';
 import './resources.css';
+import './about.css';
 import mvpMachineCover from './assets/book_covers/mvp_machine_cover.jpg';
 import statisticalRethinkingCover from './assets/book_covers/statistical_rethinking_2_cover.jpg';
 import abdwrCover from './assets/book_covers/abdwr_cover.png';
@@ -116,6 +117,15 @@ const App: React.FC = () => {
 
   return (
     <div className="resources-page">
+      <nav className="about-viewswitch">
+        <span className="about-viewswitch-link is-current" aria-current="page">
+          Resources
+        </span>
+        <a className="about-viewswitch-link" href="/about/">
+          About
+        </a>
+      </nav>
+
       <header className="resources-hero">
         <h1 className="resources-title">Resources</h1>
       </header>

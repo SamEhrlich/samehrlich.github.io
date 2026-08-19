@@ -1,4 +1,6 @@
-.resources-page {
+/* Site-wide design tokens. The --resources- prefix predates the About page; these are
+   shared by every page, not scoped to the resources view. */
+:root {
   --resources-bg-deep: #070707;
   --resources-bg-primary: #0d0d0e;
   --resources-bg-secondary: #151517;
@@ -15,7 +17,9 @@
   --resources-max-width: 1240px;
   --resources-ease-out: cubic-bezier(0.2, 0, 0, 1);
   --resources-ease-bounce: cubic-bezier(0.34, 1.4, 0.64, 1);
+}
 
+.resources-page {
   min-height: 100vh;
   padding: 0 clamp(16px, 3vw, 40px) 64px;
   color: var(--resources-text-primary);
@@ -25,6 +29,7 @@
     var(--resources-bg-deep);
   font-family: var(--font-family-base);
 }
+
 
 .resources-page > * {
   width: 100%;
