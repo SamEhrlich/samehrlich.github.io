@@ -197,6 +197,10 @@ const AboutPage: React.FC = () => {
 
         <h1 className="about-name">{PROFILE.name}</h1>
 
+        {PROFILE.focus.length > 0 && (
+          <p className="about-focus">{PROFILE.focus.join(' · ')}</p>
+        )}
+
         {PROFILE.tagline ? (
           <p className="about-tagline">{PROFILE.tagline}</p>
         ) : (

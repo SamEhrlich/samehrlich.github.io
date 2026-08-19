@@ -32,6 +32,8 @@ export const PROFILE = {
   name: 'Sam Ehrlich',
   /** One line under the name. */
   tagline: 'Baseball Operations Analyst — Driveline Baseball' as string,
+  /** What you work on. Rendered as one line, middot-separated. */
+  focus: ['MLB Analysis', 'Computer Vision', 'In-Gym Support'] as string[],
   /** Import an image into src/assets/ and assign it here; falls back to initials when empty. */
   headshot: headshot,
 };

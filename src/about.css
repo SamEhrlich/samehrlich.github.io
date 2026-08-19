@@ -97,7 +97,17 @@ a.about-viewswitch-link:focus-visible {
   text-wrap: balance;
 }
 
+.about-focus {
+  order: 1;
+  margin: 12px 0 0;
+  font-size: 0.95rem;
+  color: var(--resources-text-secondary);
+  max-width: 560px;
+  text-wrap: balance;
+}
+
 .about-tagline {
+  order: 0;
   margin: 8px 0 0;
   font-size: 0.85rem;
   font-weight: var(--font-weight-medium);
@@ -139,6 +149,7 @@ a.about-viewswitch-link:focus-visible {
 /* ---------- link row ---------- */
 
 .about-links {
+  order: 2;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
