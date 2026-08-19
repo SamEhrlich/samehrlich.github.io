@@ -116,8 +116,9 @@
 }
 
 /* Trailing room so the final section can scroll up under the nav — without it the
-   page bottoms out early and the last tabs share one scroll position. */
-.resources-section:last-of-type {
+   page bottoms out early and the last tabs share one scroll position. Scoped to pages
+   that actually have the section nav; without the nav it is just dead space. */
+.has-section-nav .resources-section:last-of-type {
   min-height: calc(100vh - 60px);
 }
 

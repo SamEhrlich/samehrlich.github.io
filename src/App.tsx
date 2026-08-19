@@ -116,7 +116,7 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="resources-page">
+    <div className="resources-page has-section-nav">
       <nav className="about-viewswitch">
         <span className="about-viewswitch-link is-current" aria-current="page">
           Resources

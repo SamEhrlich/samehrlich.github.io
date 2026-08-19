@@ -258,3 +258,95 @@ a.about-viewswitch-link:focus-visible {
     transform: none;
   }
 }
+
+/* ---------- draft scaffolding (all removed from the DOM once DRAFT is false) ---------- */
+
+.about-draft-banner {
+  margin: 12px 0 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px dashed var(--resources-border-emphasis);
+  background: var(--resources-bg-secondary);
+  color: var(--resources-text-muted);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.about-draft-banner code {
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: var(--resources-bg-elevated);
+  color: var(--resources-accent);
+  font-size: 0.78rem;
+}
+
+.about-slot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 10px;
+  width: 100%;
+  max-width: 620px;
+  margin: 14px auto 0;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px dashed var(--resources-border-emphasis);
+  background: rgba(255, 163, 0, 0.03);
+  text-align: left;
+  opacity: 0;
+  translate: 0 10px;
+  transition: opacity 420ms var(--resources-ease-out), translate 420ms var(--resources-ease-out);
+}
+
+.about-slot.is-revealed {
+  opacity: 1;
+  translate: none;
+}
+
+.about-slot-label {
+  font-size: 0.85rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--resources-accent);
+}
+
+.about-slot-source {
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: var(--resources-bg-elevated);
+  color: var(--resources-text-secondary);
+  font-size: 0.76rem;
+}
+
+.about-slot-hint {
+  flex-basis: 100%;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--resources-text-muted);
+}
+
+/* Section-level slots span the content column rather than the centred hero column. */
+.resources-section > .about-slot {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.about-hero-media.is-empty {
+  border-style: dashed;
+  box-shadow: none;
+}
+
+.about-icon-link.is-ghost {
+  border-style: dashed;
+  color: var(--resources-text-muted);
+  opacity: 0.5;
+  cursor: default;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-slot {
+    opacity: 1;
+    translate: none;
+    transition: none;
+  }
+}

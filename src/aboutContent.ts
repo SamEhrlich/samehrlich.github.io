@@ -1,8 +1,13 @@
 // All About-page copy lives here so the layout never has to be edited to change content.
-// Sections with no entries are not rendered at all, so partially-filled content still
-// looks finished rather than showing empty scaffolding.
+//
+// DRAFT mode shows a labelled placeholder for every empty slot, naming the export to fill
+// in. Set DRAFT to false before publishing and empty slots disappear entirely, so a
+// partially-filled page still looks finished.
 
 import type { IconName } from './icons';
+
+/** Set to false before publishing. */
+export const DRAFT = true;
 
 export type Social = {
   /** Accessible name for the icon-only button, e.g. "GitHub". */
