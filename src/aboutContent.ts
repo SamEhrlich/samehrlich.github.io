@@ -31,11 +31,14 @@ export type Entry = {
 export const PROFILE = {
   name: 'Sam Ehrlich',
   /** One line under the name. */
-  tagline: '' as string,
+  tagline: 'Baseball Operations Analyst, Data Science at Driveline Baseball' as string,
   /** Import an image into src/assets/ and assign it here; falls back to initials when empty. */
   headshot: headshot,
   /** Brief career overview. One string per paragraph. */
-  overview: [] as string[],
+  overview: [
+    'I work on the R&D side of player development at Driveline Baseball, building the models and tooling that turn tracking data into decisions — component-based pitch models that isolate each part of a pitch, swing path and biomechanics research, and computer vision pipelines for high-speed footage.',
+    "Before Driveline I was a data analyst for University of Missouri Baseball while finishing an MS in Data Science and Analytics. My research has been presented at SABR and Saberseminar, and a study on how biomechanics and command interact received SABR's Mike Marshall Biomechanics Research Award.",
+  ] as string[],
 };
 
 export const SOCIALS: Social[] = [

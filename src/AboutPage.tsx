@@ -38,6 +38,52 @@ const SUGGESTED_SOCIALS: { label: string; icon: IconName }[] = [
   { label: 'Email', icon: 'email' },
 ];
 
+/** Resume preview. Kept in-page so the CTA does not navigate away from the site. */
+const ResumeModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
+  const closeRef = React.useRef<HTMLButtonElement>(null);
+
+  React.useEffect(() => {
+    closeRef.current?.focus();
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose();
+    };
+    // Lock the page behind the overlay so a scroll gesture does not move both layers.
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', onKey);
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [onClose]);
+
+  return (
+    <div className="about-modal-backdrop" onClick={onClose}>
+      <div
+        className="about-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Resume"
+        onClick={(event) => event.stopPropagation()}
+      >
+        <div className="about-modal-bar">
+          <span className="about-modal-title">Resume</span>
+          <a className="about-modal-action" href={RESUME_URL} target="_blank" rel="noreferrer">
+            Open in new tab
+          </a>
+          <a className="about-modal-action" href={RESUME_URL} download="SamEhrlichResume.pdf">
+            Download
+          </a>
+          <button className="about-modal-close" onClick={onClose} ref={closeRef} aria-label="Close">
+            &times;
+          </button>
+        </div>
+        <iframe className="about-modal-frame" src={RESUME_URL} title="Resume" />
+      </div>
+    </div>
+  );
+};
+
 const EntrySection: React.FC<{
   id: string;
   title: string;
@@ -84,6 +130,8 @@ const EntrySection: React.FC<{
 };
 
 const AboutPage: React.FC = () => {
+  const [isResumeOpen, setIsResumeOpen] = React.useState(false);
+
   React.useEffect(() => {
     const observer = new IntersectionObserver(
       (entries, self) => {
@@ -207,15 +255,10 @@ const AboutPage: React.FC = () => {
             Resources
           </a>
           {RESUME_URL ? (
-            <a
-              className="about-cta is-secondary"
-              href={RESUME_URL}
-              target="_blank"
-              rel="noreferrer"
-            >
+            <button className="about-cta is-secondary" onClick={() => setIsResumeOpen(true)}>
               <Icon name="resume" />
               Resume
-            </a>
+            </button>
           ) : (
             DRAFT && (
               <span className="about-cta is-secondary is-ghost" aria-hidden="true">
@@ -271,6 +314,8 @@ const AboutPage: React.FC = () => {
         source="MEDIA"
         hint="{ title, url, source?, date?, summary? } — podcasts, interviews, articles"
       />
+      {isResumeOpen && <ResumeModal onClose={() => setIsResumeOpen(false)} />}
+
       <EntrySection
         id="lab"
         title="In the Lab"
