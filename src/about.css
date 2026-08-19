@@ -98,8 +98,10 @@ a.about-viewswitch-link:focus-visible {
 }
 
 .about-tagline {
-  margin: 10px 0 0;
-  font-size: 1.02rem;
+  margin: 8px 0 0;
+  font-size: 0.85rem;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.01em;
   color: var(--resources-accent);
   max-width: 560px;
   text-wrap: balance;
@@ -129,11 +131,12 @@ a.about-viewswitch-link:focus-visible {
 }
 
 .about-overview {
-  margin-top: 16px;
+  margin-top: 14px;
 }
 
 .about-overview p {
-  max-width: 560px;
+  max-width: 580px;
+  font-size: 0.92rem;
   margin-left: auto;
   margin-right: auto;
 }
