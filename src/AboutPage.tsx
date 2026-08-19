@@ -1,7 +1,15 @@
 import React from 'react';
 import './resources.css';
 import './about.css';
-import { DRAFT, PROFILE, SOCIALS, RESUME_URL, MEDIA, LAB, type Entry } from './aboutContent';
+import {
+  DRAFT,
+  PROFILE,
+  SOCIALS,
+  RESUME_URL,
+  MEDIA,
+  PORTFOLIO,
+  type Entry,
+} from './aboutContent';
 import { Icon, type IconName } from './icons';
 
 const initials = PROFILE.name
@@ -280,11 +288,11 @@ const AboutPage: React.FC = () => {
       {isResumeOpen && <ResumeModal onClose={() => setIsResumeOpen(false)} />}
 
       <EntrySection
-        id="lab"
-        title="In the Lab"
-        entries={LAB}
-        source="LAB"
-        hint="{ title, url, source?, date?, summary? } — research, repos, projects"
+        id="portfolio"
+        title="Portfolio"
+        entries={PORTFOLIO}
+        source="PORTFOLIO"
+        hint="{ title, url, source?, date?, summary?, logo?, icon? } — work samples"
       />
     </div>
   );

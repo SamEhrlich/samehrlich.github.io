@@ -55,8 +55,6 @@ export const SOCIALS: Social[] = [
 /** Path or URL to the resume. Empty renders a draft placeholder. */
 export const RESUME_URL: string = resume;
 
-/** The longer story of getting into the field. One string per paragraph. */
-
 export const MEDIA: Entry[] = [
   {
     title: "What's 'wrong' with Skenes? Let's dissect his recent slump",
@@ -140,4 +138,5 @@ export const MEDIA: Entry[] = [
   },
 ];
 
-export const LAB: Entry[] = [];
+/** Work samples: research, repos, projects. */
+export const PORTFOLIO: Entry[] = [];
