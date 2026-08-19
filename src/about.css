@@ -336,11 +336,27 @@ a.about-viewswitch-link:focus-visible {
   box-shadow: none;
 }
 
+.about-cta.is-secondary {
+  border-color: var(--resources-border-emphasis);
+  background: var(--resources-bg-secondary);
+  color: var(--resources-text-primary);
+}
+
+.about-cta.is-secondary:hover {
+  border-color: var(--resources-accent);
+  color: var(--resources-accent);
+}
+
+.about-cta.is-ghost,
 .about-icon-link.is-ghost {
   border-style: dashed;
   color: var(--resources-text-muted);
   opacity: 0.5;
   cursor: default;
+}
+
+.about-cta.is-ghost {
+  background: transparent;
 }
 
 @media (prefers-reduced-motion: reduce) {

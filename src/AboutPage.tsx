@@ -1,7 +1,16 @@
 import React from 'react';
 import './resources.css';
 import './about.css';
-import { DRAFT, PROFILE, SOCIALS, JOURNEY, MEDIA, LAB, type Entry } from './aboutContent';
+import {
+  DRAFT,
+  PROFILE,
+  SOCIALS,
+  RESUME_URL,
+  JOURNEY,
+  MEDIA,
+  LAB,
+  type Entry,
+} from './aboutContent';
 import { Icon, type IconName } from './icons';
 
 const initials = PROFILE.name
@@ -27,7 +36,6 @@ const SUGGESTED_SOCIALS: { label: string; icon: IconName }[] = [
   { label: 'X', icon: 'x' },
   { label: 'LinkedIn', icon: 'linkedin' },
   { label: 'Email', icon: 'email' },
-  { label: 'Substack', icon: 'substack' },
   { label: 'YouTube', icon: 'youtube' },
 ];
 
@@ -127,7 +135,11 @@ const AboutPage: React.FC = () => {
       <header className="about-hero">
         <div className={`about-hero-media${PROFILE.headshot ? '' : ' is-empty'}`}>
           {PROFILE.headshot ? (
-            <img src={PROFILE.headshot} alt={PROFILE.name} />
+            <img
+              src={PROFILE.headshot}
+              alt={PROFILE.name}
+              style={{ objectPosition: PROFILE.headshotPosition }}
+            />
           ) : (
             <span className="about-hero-initials">{initials}</span>
           )}
@@ -199,12 +211,37 @@ const AboutPage: React.FC = () => {
             <Icon name="book" />
             Resources
           </a>
+          {RESUME_URL ? (
+            <a
+              className="about-cta is-secondary"
+              href={RESUME_URL}
+              target={RESUME_URL.startsWith('http') ? '_blank' : undefined}
+              rel={RESUME_URL.startsWith('http') ? 'noreferrer' : undefined}
+            >
+              <Icon name="resume" />
+              Resume
+            </a>
+          ) : (
+            DRAFT && (
+              <span className="about-cta is-secondary is-ghost" aria-hidden="true">
+                <Icon name="resume" />
+                Resume
+              </span>
+            )
+          )}
         </div>
         {DRAFT && missingSocials.length > 0 && (
           <Slot
             label="Social links"
             source="SOCIALS"
             hint={`Ghosted above: ${missingSocials.map((s) => s.label).join(', ')}`}
+          />
+        )}
+        {DRAFT && !RESUME_URL && (
+          <Slot
+            label="Resume"
+            source="RESUME_URL"
+            hint="Put the PDF in public/ and point here, e.g. '/resume.pdf'"
           />
         )}
       </header>

@@ -5,6 +5,7 @@
 // partially-filled page still looks finished.
 
 import type { IconName } from './icons';
+import headshot from './assets/twitter_headshot.jpg';
 
 /** Set to false before publishing. */
 export const DRAFT = true;
@@ -29,16 +30,24 @@ export type Entry = {
 export const PROFILE = {
   name: 'Sam Ehrlich',
   /** One line under the name. */
-  tagline: '',
+  tagline: '' as string,
   /** Import an image into src/assets/ and assign it here; falls back to initials when empty. */
-  headshot: '',
+  headshot: headshot,
+  /** CSS object-position for the headshot crop, e.g. '75% 30%' to favour the right side. */
+  headshotPosition: 'center',
   /** Brief career overview. One string per paragraph. */
   overview: [] as string[],
 };
 
 export const SOCIALS: Social[] = [
+  { label: 'X', url: 'https://x.com/SamEhrlich', icon: 'x' },
+  { label: 'LinkedIn', url: 'https://www.linkedin.com/in/samuel-ehrlich-5a24351a3/', icon: 'linkedin' },
   { label: 'GitHub', url: 'https://github.com/SamEhrlich', icon: 'github' },
+  { label: 'Email', url: 'mailto:sehrlich98@gmail.com', icon: 'email' },
 ];
+
+/** Path or URL to the resume. Empty renders a draft placeholder. */
+export const RESUME_URL: string = '';
 
 /** The longer story of getting into the field. One string per paragraph. */
 export const JOURNEY: string[] = [];
