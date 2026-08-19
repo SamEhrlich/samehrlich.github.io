@@ -230,9 +230,27 @@ a.about-viewswitch-link:focus-visible {
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
 }
 
-/* No media well on these cards, so the card is a single column rather than icon + text. */
-.about-entry-card {
-  grid-template-columns: minmax(0, 1fr);
+/* Source marks are wide logos, not square avatars, so they letterbox inside the well
+   instead of filling it the way the Resources page thumbnails do. */
+.about-entry-media {
+  background: var(--resources-bg-elevated);
+}
+
+.about-entry-media img {
+  width: auto;
+  height: auto;
+  max-width: 76%;
+  max-height: 76%;
+  object-fit: contain;
+  outline: none;
+}
+
+.about-entry-media svg {
+  color: var(--resources-text-secondary);
+}
+
+.about-entry-card:hover .about-entry-media img {
+  scale: 1.06;
 }
 
 @media (max-width: 720px) {

@@ -7,6 +7,10 @@
 import type { IconName } from './icons';
 import headshot from './assets/about/headshot.jpg';
 import resume from './assets/about/resume.pdf';
+import mlbLogo from './assets/about/sources/mlb.png';
+import drivelineLogo from './assets/about/sources/driveline.webp';
+import sabrLogo from './assets/about/sources/sabr.png';
+import ratesAndBarrelsLogo from './assets/about/sources/rates_and_barrels.jpg';
 
 /** Set to false before publishing. */
 export const DRAFT = true;
@@ -26,6 +30,9 @@ export type Entry = {
   /** Free-form, e.g. "2026" or "March 2026". Shown next to the source. */
   date?: string;
   summary?: string;
+  /** Source logo. Falls back to `icon` when the outlet has no mark on hand. */
+  logo?: string;
+  icon?: IconName;
 };
 
 export const PROFILE = {
@@ -58,6 +65,7 @@ export const MEDIA: Entry[] = [
     source: 'MLB.com',
     date: 'August 2026',
     summary: 'Analysis contributed.',
+    logo: mlbLogo,
   },
   {
     title: 'Searching for answers to Raleigh\u2019s mysterious struggles',
@@ -65,36 +73,42 @@ export const MEDIA: Entry[] = [
     source: 'MLB.com',
     date: 'July 2026',
     summary: 'Analysis contributed.',
+    logo: mlbLogo,
   },
   {
     title: 'How in the heck has Fernando Tatis Jr. not homered yet? A forensic swing investigation',
     url: 'https://drivelinebaseball.com/blogs/blog/fernando-tatis-jr-no-home-runs-swing-investigation',
     source: 'Driveline Baseball',
     date: 'May 2026',
+    logo: drivelineLogo,
   },
   {
     title: 'Forcing Rotation: Exploring Lead-Leg Force Curves and Rotation in Hitters',
     url: 'https://drivelinebaseball.com/blogs/blog/forcing-rotation-exploring-lead-leg-force-curves-and-rotation-in-hitters',
     source: 'Driveline Baseball',
     date: 'April 2026',
+    logo: drivelineLogo,
   },
   {
     title: 'Two stats to believe in this early on -- and one to forget',
     url: 'https://www.mlb.com/news/mlb-stats-to-trust-in-early-april',
     source: 'MLB.com',
     date: 'April 2026',
+    logo: mlbLogo,
   },
   {
     title: 'The Interaction of Biomechanics and Command',
     url: 'https://drivelinebaseball.com/blogs/blog/the-interaction-of-biomechanics-and-command',
     source: 'Driveline Baseball',
     date: 'February 2026',
+    logo: drivelineLogo,
   },
   {
     title: 'Optimizing Bat Paths',
     url: 'https://drivelinebaseball.com/blogs/blog/optimizing-bat-paths',
     source: 'Driveline Baseball',
     date: 'January 2026',
+    logo: drivelineLogo,
   },
   {
     title: 'Solving Ball Flight Physics',
@@ -102,17 +116,20 @@ export const MEDIA: Entry[] = [
     source: 'SABR Analytics Conference',
     date: '2026',
     summary: 'Presented with Conner Pelletier and Josh Hejka.',
+    logo: sabrLogo,
   },
   {
     title: 'The next big thing? This strange pitch is being reverse engineered',
     url: 'https://www.tiktok.com/@pitchingninja/video/7625681062009605389',
     source: 'Pitching Ninja',
+    icon: 'tiktok',
   },
   {
     title: 'Takeaways From Saberseminar & A Packed Weekend of Baseball News',
     url: 'https://podcasts.apple.com/us/podcast/rates-barrels-a-show-about-baseball/id1486883874?i=1000723499511',
     source: 'Rates & Barrels',
     date: 'August 2025',
+    logo: ratesAndBarrelsLogo,
   },
   {
     title:
@@ -120,6 +137,7 @@ export const MEDIA: Entry[] = [
     url: 'https://sabr.org/latest/pelletier-lambert-becerra-ehrlich-win-inaugural-dr-mike-marshall-baseball-biomechanics-research-award/',
     source: 'SABR',
     date: 'March 2025',
+    logo: sabrLogo,
   },
 ];
 

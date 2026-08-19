@@ -101,6 +101,13 @@ const EntrySection: React.FC<{
         <div className="resources-items-grid about-entry-grid">
           {entries.map((entry) => (
             <article className="resources-item-card about-entry-card" key={entry.url}>
+              <div className="resources-item-media about-entry-media">
+                {entry.logo ? (
+                  <img src={entry.logo} alt="" loading="lazy" />
+                ) : (
+                  entry.icon && <Icon name={entry.icon} size={20} />
+                )}
+              </div>
               <div className="resources-item-content">
                 <h3>
                   <a
