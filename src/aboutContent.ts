@@ -51,6 +51,76 @@ export const RESUME_URL: string = resume;
 /** The longer story of getting into the field. One string per paragraph. */
 export const JOURNEY: string[] = [];
 
-export const MEDIA: Entry[] = [];
+export const MEDIA: Entry[] = [
+  {
+    title: "What's 'wrong' with Skenes? Let's dissect his recent slump",
+    url: 'https://www.mlb.com/news/paul-skenes-2026-metrics-comparison-deep-dive',
+    source: 'MLB.com',
+    date: 'August 2026',
+    summary: 'Analysis contributed.',
+  },
+  {
+    title: 'Searching for answers to Raleigh\u2019s mysterious struggles',
+    url: 'https://www.mlb.com/news/cal-raleigh-offensive-slump-discussion-2026',
+    source: 'MLB.com',
+    date: 'July 2026',
+    summary: 'Analysis contributed.',
+  },
+  {
+    title: 'How in the heck has Fernando Tatis Jr. not homered yet? A forensic swing investigation',
+    url: 'https://drivelinebaseball.com/blogs/blog/fernando-tatis-jr-no-home-runs-swing-investigation',
+    source: 'Driveline Baseball',
+    date: 'May 2026',
+  },
+  {
+    title: 'Forcing Rotation: Exploring Lead-Leg Force Curves and Rotation in Hitters',
+    url: 'https://drivelinebaseball.com/blogs/blog/forcing-rotation-exploring-lead-leg-force-curves-and-rotation-in-hitters',
+    source: 'Driveline Baseball',
+    date: 'April 2026',
+  },
+  {
+    title: 'Two stats to believe in this early on -- and one to forget',
+    url: 'https://www.mlb.com/news/mlb-stats-to-trust-in-early-april',
+    source: 'MLB.com',
+    date: 'April 2026',
+  },
+  {
+    title: 'The Interaction of Biomechanics and Command',
+    url: 'https://drivelinebaseball.com/blogs/blog/the-interaction-of-biomechanics-and-command',
+    source: 'Driveline Baseball',
+    date: 'February 2026',
+  },
+  {
+    title: 'Optimizing Bat Paths',
+    url: 'https://drivelinebaseball.com/blogs/blog/optimizing-bat-paths',
+    source: 'Driveline Baseball',
+    date: 'January 2026',
+  },
+  {
+    title: 'Solving Ball Flight Physics',
+    url: 'https://www.youtube.com/watch?v=ZRKJbYRHmXw',
+    source: 'SABR Analytics Conference',
+    date: '2026',
+    summary: 'Presented with Conner Pelletier and Josh Hejka.',
+  },
+  {
+    title: 'The next big thing? This strange pitch is being reverse engineered',
+    url: 'https://www.tiktok.com/@pitchingninja/video/7625681062009605389',
+    source: 'Pitching Ninja',
+  },
+  {
+    title: 'Takeaways From Saberseminar & A Packed Weekend of Baseball News',
+    url: 'https://podcasts.apple.com/us/podcast/rates-barrels-a-show-about-baseball/id1486883874?i=1000723499511',
+    source: 'Rates & Barrels',
+    date: 'August 2025',
+  },
+  {
+    title:
+      'Pelletier, Lambert, Becerra, Ehrlich win inaugural Dr. Mike Marshall Baseball Biomechanics Research Award',
+    url: 'https://sabr.org/latest/pelletier-lambert-becerra-ehrlich-win-inaugural-dr-mike-marshall-baseball-biomechanics-research-award/',
+    source: 'SABR',
+    date: 'March 2025',
+  },
+];
 
 export const LAB: Entry[] = [];
