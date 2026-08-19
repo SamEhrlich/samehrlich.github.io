@@ -2,9 +2,13 @@
 // Sections with no entries are not rendered at all, so partially-filled content still
 // looks finished rather than showing empty scaffolding.
 
+import type { IconName } from './icons';
+
 export type Social = {
+  /** Accessible name for the icon-only button, e.g. "GitHub". */
   label: string;
   url: string;
+  icon: IconName;
 };
 
 export type Entry = {
@@ -27,7 +31,9 @@ export const PROFILE = {
   overview: [] as string[],
 };
 
-export const SOCIALS: Social[] = [{ label: 'GitHub', url: 'https://github.com/SamEhrlich' }];
+export const SOCIALS: Social[] = [
+  { label: 'GitHub', url: 'https://github.com/SamEhrlich', icon: 'github' },
+];
 
 /** The longer story of getting into the field. One string per paragraph. */
 export const JOURNEY: string[] = [];

@@ -2,6 +2,7 @@ import React from 'react';
 import './resources.css';
 import './about.css';
 import { PROFILE, SOCIALS, JOURNEY, MEDIA, LAB, type Entry } from './aboutContent';
+import { Icon } from './icons';
 
 const initials = PROFILE.name
   .split(' ')
@@ -86,32 +87,36 @@ const AboutPage: React.FC = () => {
             <span className="about-hero-initials">{initials}</span>
           )}
         </div>
-        <div className="about-hero-body">
-          <h1 className="resources-title">{PROFILE.name}</h1>
-          {PROFILE.tagline && <p className="about-tagline">{PROFILE.tagline}</p>}
-          {PROFILE.overview.length > 0 && (
-            <div className="about-prose about-overview">
-              {PROFILE.overview.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-            </div>
-          )}
-          <div className="about-links">
-            {SOCIALS.map((social) => (
-              <a
-                className="about-link"
-                key={social.url}
-                href={social.url}
-                target={social.url.startsWith('http') ? '_blank' : undefined}
-                rel={social.url.startsWith('http') ? 'noreferrer' : undefined}
-              >
-                {social.label}
-              </a>
+
+        <h1 className="about-name">{PROFILE.name}</h1>
+        {PROFILE.tagline && <p className="about-tagline">{PROFILE.tagline}</p>}
+
+        {PROFILE.overview.length > 0 && (
+          <div className="about-prose about-overview">
+            {PROFILE.overview.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
             ))}
-            <a className="about-link is-primary" href="/">
-              Resources
-            </a>
           </div>
+        )}
+
+        <div className="about-links">
+          {SOCIALS.map((social) => (
+            <a
+              className="about-icon-link"
+              key={social.url}
+              href={social.url}
+              title={social.label}
+              aria-label={social.label}
+              target={social.url.startsWith('http') ? '_blank' : undefined}
+              rel={social.url.startsWith('http') ? 'noreferrer' : undefined}
+            >
+              <Icon name={social.icon} />
+            </a>
+          ))}
+          <a className="about-cta" href="/">
+            <Icon name="book" />
+            Resources
+          </a>
         </div>
       </header>
 
