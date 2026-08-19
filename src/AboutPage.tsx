@@ -1,16 +1,7 @@
 import React from 'react';
 import './resources.css';
 import './about.css';
-import {
-  DRAFT,
-  PROFILE,
-  SOCIALS,
-  RESUME_URL,
-  JOURNEY,
-  MEDIA,
-  LAB,
-  type Entry,
-} from './aboutContent';
+import { DRAFT, PROFILE, SOCIALS, RESUME_URL, MEDIA, LAB, type Entry } from './aboutContent';
 import { Icon, type IconName } from './icons';
 
 const initials = PROFILE.name
@@ -278,29 +269,6 @@ const AboutPage: React.FC = () => {
           />
         )}
       </header>
-
-      {(JOURNEY.length > 0 || DRAFT) && (
-        <section className="resources-section" id="journey">
-          <div className="resources-section-header">
-            <h2>My Journey</h2>
-          </div>
-          {JOURNEY.length > 0 ? (
-            <div className="about-prose about-journey">
-              {JOURNEY.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-            </div>
-          ) : (
-            DRAFT && (
-              <Slot
-                label="Journey story"
-                source="JOURNEY"
-                hint="The longer story of how you got into the field — one string per paragraph"
-              />
-            )
-          )}
-        </section>
-      )}
 
       <EntrySection
         id="media"

@@ -56,14 +56,6 @@ export const SOCIALS: Social[] = [
 export const RESUME_URL: string = resume;
 
 /** The longer story of getting into the field. One string per paragraph. */
-export const JOURNEY: string[] = [
-  'I did not grow up on baseball. I came to it late and sideways: my undergrad was sport management, and when I went back to Missouri for a master\u2019s in data science, the job I was chasing was in football.',
-  'That search took close to a hundred applications before I understood what I was actually applying for. Sport analytics is not one job \u2014 there are data engineers, analysts, baseball operations staff, sport scientists, video techs \u2014 and the titles hide how different the skill sets underneath them are. Reading job descriptions carefully turned out to be half the battle.',
-  'What finally worked was the least glamorous option available: student work with Missouri baseball for the 2023 season. I built pitch classification models, a custom Elo system for win probability and strength of schedule, and R Shiny dashboards the coaching staff actually used on and off the field. I went looking for football and found baseball, and I would not trade how that turned out. The people I met there are still some of my most valuable connections \u2014 this industry is far smaller and better connected than it looks from outside.',
-  'I came into Driveline through an internship and now work as a baseball operations analyst on the data science side. Day to day that means deliverables for our MLB clients and whatever the trainers need in the gym: component-based pitch models, swing path and biomechanics research, computer vision pipelines for high-speed footage, and the internal BI tooling the staff runs on. It is a small team, long hours, and the fastest learning I have done anywhere.',
-  'The advice I give when people email me is always the same three things. This field sits at the intersection of statistics, coding, and sport knowledge \u2014 you need all three to some degree, and being strong in two buys you time to catch up on the third. For me it was coding and stats carrying me while I learned the baseball. Build things you are genuinely curious about and put them somewhere public, so people can find the work rather than take your word for it. And do not get discouraged by rejection: far more people want to work in sports than there are jobs, and the pool gets more saturated every year.',
-  'If you are trying to break in and think I can help, my email is up top. I answer.',
-];
 
 export const MEDIA: Entry[] = [
   {
