@@ -55,40 +55,6 @@ export const SOCIALS: Social[] = [
 /** Path or URL to the resume. Empty renders a draft placeholder. */
 export const RESUME_URL: string = resume;
 
-export type Role = {
-  role: string;
-  org: string;
-  dates: string;
-  detail?: string;
-};
-
-export const EXPERIENCE: Role[] = [
-  {
-    role: 'Baseball Operations Analyst, Data Science',
-    org: 'Driveline Baseball',
-    dates: 'Jan 2025 — Present',
-    detail: 'Kent, WA',
-  },
-  {
-    role: 'Data Analyst',
-    org: 'University of Missouri Baseball',
-    dates: 'Aug 2022 — May 2023',
-    detail: 'Columbia, MO',
-  },
-  {
-    role: 'MS, Data Science and Analytics',
-    org: 'University of Missouri',
-    dates: '2021 — 2023',
-    detail: 'High Performance Computing',
-  },
-  {
-    role: 'BS, Parks, Recreation and Sport',
-    org: 'University of Missouri',
-    dates: '2017 — 2020',
-    detail: 'Sport Management, cum laude',
-  },
-];
-
 export const MEDIA: Entry[] = [
   {
     title: "What's 'wrong' with Skenes? Let's dissect his recent slump",

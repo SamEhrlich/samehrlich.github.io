@@ -6,7 +6,6 @@ import {
   PROFILE,
   SOCIALS,
   RESUME_URL,
-  EXPERIENCE,
   MEDIA,
   PORTFOLIO,
   type Entry,
@@ -35,7 +34,6 @@ const Slot: React.FC<{ label: string; source: string; hint?: string }> = ({
 const SECTION_ANCHOR_OFFSET = 72;
 
 const SECTIONS = [
-  { id: 'experience', label: 'Experience' },
   { id: 'media', label: 'In the Media' },
   { id: 'portfolio', label: 'Portfolio' },
 ];
@@ -310,26 +308,6 @@ const AboutPage: React.FC = () => {
           </a>
         ))}
       </nav>
-
-      <section className="resources-section" id="experience">
-        <div className="resources-section-header">
-          <h2>Experience</h2>
-        </div>
-        <ul className="about-timeline">
-          {EXPERIENCE.map((item) => (
-            <li className="about-timeline-item" key={`${item.org}-${item.dates}`}>
-              <div className="about-timeline-main">
-                <span className="about-timeline-role">{item.role}</span>
-                <span className="about-timeline-org">{item.org}</span>
-              </div>
-              <div className="about-timeline-meta">
-                <span className="about-timeline-dates">{item.dates}</span>
-                {item.detail && <span className="about-timeline-detail">{item.detail}</span>}
-              </div>
-            </li>
-          ))}
-        </ul>
-      </section>
 
       <EntrySection
         id="media"
