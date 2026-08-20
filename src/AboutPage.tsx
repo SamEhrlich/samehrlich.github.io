@@ -6,6 +6,7 @@ import {
   PROFILE,
   SOCIALS,
   RESUME_URL,
+  EXPERIENCE,
   MEDIA,
   PORTFOLIO,
   type Entry,
@@ -29,6 +30,15 @@ const Slot: React.FC<{ label: string; source: string; hint?: string }> = ({
     {hint && <span className="about-slot-hint">{hint}</span>}
   </div>
 );
+
+// Must match `scroll-margin-top` on .resources-section in resources.css — see App.tsx.
+const SECTION_ANCHOR_OFFSET = 72;
+
+const SECTIONS = [
+  { id: 'experience', label: 'Experience' },
+  { id: 'media', label: 'In the Media' },
+  { id: 'portfolio', label: 'Portfolio' },
+];
 
 /** Socials worth prompting for; ghosted in the link row until they are added. */
 const SUGGESTED_SOCIALS: { label: string; icon: IconName }[] = [
@@ -137,6 +147,21 @@ const EntrySection: React.FC<{
 
 const AboutPage: React.FC = () => {
   const [isResumeOpen, setIsResumeOpen] = React.useState(false);
+  const [activeSection, setActiveSection] = React.useState(SECTIONS[0].id);
+
+  React.useEffect(() => {
+    const syncActiveSection = () => {
+      const passed = SECTIONS.filter(
+        (section) =>
+          document.getElementById(section.id)!.getBoundingClientRect().top <=
+          SECTION_ANCHOR_OFFSET + 8
+      );
+      setActiveSection(passed.length > 0 ? passed[passed.length - 1].id : SECTIONS[0].id);
+    };
+    syncActiveSection();
+    window.addEventListener('scroll', syncActiveSection, { passive: true });
+    return () => window.removeEventListener('scroll', syncActiveSection);
+  }, []);
 
   React.useEffect(() => {
     const observer = new IntersectionObserver(
@@ -167,7 +192,7 @@ const AboutPage: React.FC = () => {
   );
 
   return (
-    <div className="resources-page about-page">
+    <div className="resources-page about-page has-section-nav">
       <nav className="about-viewswitch">
         <a className="about-viewswitch-link" href="/">
           Resources
@@ -244,18 +269,14 @@ const AboutPage: React.FC = () => {
                 <Icon name={suggestion.icon} />
               </span>
             ))}
-          <a className="about-cta" href="/">
-            <Icon name="book" />
-            Resources
-          </a>
           {RESUME_URL ? (
-            <button className="about-cta is-secondary" onClick={() => setIsResumeOpen(true)}>
+            <button className="about-cta" onClick={() => setIsResumeOpen(true)}>
               <Icon name="resume" />
               Resume
             </button>
           ) : (
             DRAFT && (
-              <span className="about-cta is-secondary is-ghost" aria-hidden="true">
+              <span className="about-cta is-ghost" aria-hidden="true">
                 <Icon name="resume" />
                 Resume
               </span>
@@ -277,6 +298,38 @@ const AboutPage: React.FC = () => {
           />
         )}
       </header>
+
+      <nav className="resources-nav">
+        {SECTIONS.map((section) => (
+          <a
+            className={`resources-nav-button${activeSection === section.id ? ' is-active' : ''}`}
+            key={section.id}
+            href={`#${section.id}`}
+          >
+            {section.label}
+          </a>
+        ))}
+      </nav>
+
+      <section className="resources-section" id="experience">
+        <div className="resources-section-header">
+          <h2>Experience</h2>
+        </div>
+        <ul className="about-timeline">
+          {EXPERIENCE.map((item) => (
+            <li className="about-timeline-item" key={`${item.org}-${item.dates}`}>
+              <div className="about-timeline-main">
+                <span className="about-timeline-role">{item.role}</span>
+                <span className="about-timeline-org">{item.org}</span>
+              </div>
+              <div className="about-timeline-meta">
+                <span className="about-timeline-dates">{item.dates}</span>
+                {item.detail && <span className="about-timeline-detail">{item.detail}</span>}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
 
       <EntrySection
         id="media"
