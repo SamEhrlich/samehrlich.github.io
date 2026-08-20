@@ -4,3 +4,7 @@ dist/
 .env.local
 .DS_Store
 npm-debug.log*
+
+# Raw portfolio staging folder — 277 MB of source video/images, and it holds client and
+# personal material. Curated, web-sized copies go in src/assets/about/portfolio/ instead.
+portfolio/
