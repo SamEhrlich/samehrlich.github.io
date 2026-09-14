@@ -15,7 +15,7 @@ import sabrLogo from './assets/about/sources/sabr.png';
 import ratesAndBarrelsLogo from './assets/about/sources/rates_and_barrels.jpg';
 
 /** Set to false before publishing. */
-export const DRAFT = true;
+export const DRAFT = false;
 
 export type Social = {
   /** Accessible name for the icon-only button, e.g. "GitHub". */
