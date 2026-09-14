@@ -9,7 +9,13 @@ import {
   MEDIA,
   PORTFOLIO,
   SHOW_PORTFOLIO,
+  RESUME_EXPERIENCE,
+  RESUME_EDUCATION,
+  RESUME_PROJECTS,
+  RESUME_SKILLS,
   type Entry,
+  type RichText,
+  type Bullet,
 } from './aboutContent';
 import { Icon, type IconName } from './icons';
 
@@ -36,6 +42,7 @@ const SECTION_ANCHOR_OFFSET = 72;
 
 const SECTIONS = [
   { id: 'media', label: 'In the Media' },
+  { id: 'resume', label: 'Resume' },
   ...(SHOW_PORTFOLIO ? [{ id: 'portfolio', label: 'Portfolio' }] : []),
 ];
 
@@ -46,51 +53,39 @@ const SUGGESTED_SOCIALS: { label: string; icon: IconName }[] = [
   { label: 'Email', icon: 'email' },
 ];
 
-/** Resume preview. Kept in-page so the CTA does not navigate away from the site. */
-const ResumeModal: React.FC<{ onClose: () => void }> = ({ onClose }) => {
-  const closeRef = React.useRef<HTMLButtonElement>(null);
+/** Renders a run of text whose links sit mid-sentence. */
+const Rich: React.FC<{ parts: RichText }> = ({ parts }) => (
+  <>
+    {parts.map((part, i) =>
+      typeof part === 'string' ? (
+        part
+      ) : (
+        <a key={i} href={part.url} target="_blank" rel="noreferrer">
+          {part.text}
+        </a>
+      )
+    )}
+  </>
+);
 
-  React.useEffect(() => {
-    closeRef.current?.focus();
-    const onKey = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') onClose();
-    };
-    // Lock the page behind the overlay so a scroll gesture does not move both layers.
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    window.addEventListener('keydown', onKey);
-    return () => {
-      window.removeEventListener('keydown', onKey);
-      document.body.style.overflow = previousOverflow;
-    };
-  }, [onClose]);
-
-  return (
-    <div className="about-modal-backdrop" onClick={onClose}>
-      <div
-        className="about-modal"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Resume"
-        onClick={(event) => event.stopPropagation()}
-      >
-        <div className="about-modal-bar">
-          <span className="about-modal-title">Resume</span>
-          <a className="about-modal-action" href={RESUME_URL} target="_blank" rel="noreferrer">
-            Open in new tab
-          </a>
-          <a className="about-modal-action" href={RESUME_URL} download="SamEhrlichResume.pdf">
-            Download
-          </a>
-          <button className="about-modal-close" onClick={onClose} ref={closeRef} aria-label="Close">
-            &times;
-          </button>
-        </div>
-        <iframe className="about-modal-frame" src={RESUME_URL} title="Resume" />
-      </div>
-    </div>
-  );
-};
+const Bullets: React.FC<{ bullets: Bullet[] }> = ({ bullets }) => (
+  <ul className="resume-bullets">
+    {bullets.map((bullet, i) => (
+      <li key={i}>
+        <Rich parts={bullet.text} />
+        {bullet.sub && (
+          <ul className="resume-bullets resume-bullets--sub">
+            {bullet.sub.map((line, j) => (
+              <li key={j}>
+                <Rich parts={line} />
+              </li>
+            ))}
+          </ul>
+        )}
+      </li>
+    ))}
+  </ul>
+);
 
 const EntrySection: React.FC<{
   id: string;
@@ -145,7 +140,6 @@ const EntrySection: React.FC<{
 };
 
 const AboutPage: React.FC = () => {
-  const [isResumeOpen, setIsResumeOpen] = React.useState(false);
   const [activeSection, setActiveSection] = React.useState(SECTIONS[0].id);
 
   React.useEffect(() => {
@@ -271,10 +265,10 @@ const AboutPage: React.FC = () => {
               </span>
             ))}
           {RESUME_URL ? (
-            <button className="about-cta" onClick={() => setIsResumeOpen(true)}>
+            <a className="about-cta" href="#resume">
               <Icon name="resume" />
               Resume
-            </button>
+            </a>
           ) : (
             DRAFT && (
               <span className="about-cta is-ghost" aria-hidden="true">
@@ -321,7 +315,61 @@ const AboutPage: React.FC = () => {
         source="MEDIA"
         hint="{ title, url, source?, date?, summary? } — podcasts, interviews, articles"
       />
-      {isResumeOpen && <ResumeModal onClose={() => setIsResumeOpen(false)} />}
+
+      <section className="resources-section" id="resume">
+        <div className="resources-section-header resume-header">
+          <h2>Resume</h2>
+          <a className="about-cta resume-download" href={RESUME_URL} download="SamEhrlichResume.pdf">
+            <Icon name="resume" />
+            Download PDF
+          </a>
+        </div>
+
+        <div className="resume-body">
+          <h3 className="resume-group">Experience</h3>
+          {RESUME_EXPERIENCE.map((role) => (
+            <div className="resume-item" key={role.org}>
+              <div className="resume-item-head">
+                <span className="resume-org">{role.org}</span>
+                <span className="resume-dates">{role.dates}</span>
+              </div>
+              <p className="resume-role">{role.title}</p>
+              <Bullets bullets={role.bullets} />
+            </div>
+          ))}
+
+          <h3 className="resume-group">Education</h3>
+          <div className="resume-item">
+            <div className="resume-item-head">
+              <span className="resume-org">{RESUME_EDUCATION.school}</span>
+            </div>
+            {RESUME_EDUCATION.degrees.map((degree) => (
+              <div className="resume-degree" key={degree.degree}>
+                <div className="resume-item-head">
+                  <span className="resume-role">{degree.degree}</span>
+                  <span className="resume-dates">{degree.dates}</span>
+                </div>
+                {degree.detail && <p className="resume-detail">{degree.detail}</p>}
+              </div>
+            ))}
+          </div>
+
+          <h3 className="resume-group">Projects</h3>
+          <div className="resume-item">
+            <Bullets bullets={RESUME_PROJECTS} />
+          </div>
+
+          <h3 className="resume-group">Technical Skills</h3>
+          <div className="resume-item">
+            {RESUME_SKILLS.map((skill) => (
+              <p className="resume-detail" key={skill.label}>
+                <span className="resume-skill-label">{skill.label}:</span>{' '}
+                <Rich parts={skill.body} />
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {SHOW_PORTFOLIO && (
         <EntrySection

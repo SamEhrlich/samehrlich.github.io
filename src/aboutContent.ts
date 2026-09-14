@@ -153,3 +153,192 @@ export const MEDIA: Entry[] = [
 export const SHOW_PORTFOLIO = false;
 
 export const PORTFOLIO: Entry[] = [];
+
+/** A run of text with optional inline links, so a bullet can link a phrase mid-sentence. */
+export type RichText = (string | { text: string; url: string })[];
+
+export type Bullet = { text: RichText; sub?: RichText[] };
+
+export type ResumeRole = {
+  org: string;
+  title: string;
+  dates: string;
+  bullets: Bullet[];
+};
+
+export type Degree = { degree: string; detail?: string; dates: string };
+
+// The resume rendered on the page. Deliberately not generated from the PDF: this version
+// carries no home address or phone, and the PDF download is the redacted resume_public.pdf.
+export const RESUME_EXPERIENCE: ResumeRole[] = [
+  {
+    org: 'Driveline Baseball, Kent, WA',
+    title: 'Baseball Operations Analyst - Data Science',
+    dates: 'Jan 2025 - Present',
+    bullets: [
+      {
+        text: [
+          'Repeat researcher and presenter at 2x SABR and 1x Saberseminar conference on novel batting and pitching studies',
+        ],
+        sub: [
+          [
+            'Biomechanics and Command Interaction study awarded the ',
+            {
+              text: 'SABR Mike Marshall Biomechanics Research Award',
+              url: 'https://sabr.org/latest/pelletier-lambert-becerra-ehrlich-win-inaugural-dr-mike-marshall-baseball-biomechanics-research-award/',
+            },
+          ],
+          [
+            'Swing Path Optimization identifying the optimal Power vs Contact tradeoff of a batter’s swing using a pareto frontier',
+          ],
+          [
+            {
+              text: 'Pitch physics study on seam shifted wake',
+              url: 'https://www.youtube.com/watch?v=ZRKJbYRHmXw',
+            },
+            ' to maximize efficiency of pitches utilizing different seam orientations',
+          ],
+        ],
+      },
+      {
+        text: [
+          'Streamlined advance scouting reports and AI integration to provide matchup insights to pro level clients',
+        ],
+      },
+      {
+        text: [
+          'Developed industry leading pitch models using a component based approach to isolate parts of the pitch into specific contributions',
+        ],
+        sub: [
+          [
+            'Stacking up against FanGraphs with an R² of over 0.75 across various pitch types and event specific qualifications',
+          ],
+        ],
+      },
+      {
+        text: [
+          'Refined skills and tools in Claude for our less technical employees to automate their workflows and save time on repeatable tasks',
+        ],
+      },
+      {
+        text: [
+          'Built an end-to-end CV pipeline to ',
+          {
+            text: 'detect baseball seams',
+            url: 'https://x.com/SamEhrlich/status/2017776969392525663',
+          },
+          ' from Edgertronic footage using CVAT/Roboflow for data annotation, SAM3 fine-tuned for segmentation, and optimizing the model using autoresearch and other techniques to improve mAP50-95',
+        ],
+      },
+      {
+        text: [
+          'Built in-house BI Dashboard “Samcast” for our trainers saving $100k annually utilizing MongoDB, ClickHouse, FastAPI, and React',
+        ],
+        sub: [
+          ['Collaborated with trainers to own and maintain a product used company-wide daily and shared across social media'],
+          ['Used Karpathy’s Wiki LLM framework with gbrain to efficiently route context during development and debugging'],
+        ],
+      },
+    ],
+  },
+  {
+    org: 'University of Missouri Baseball, Columbia, MO',
+    title: 'Data Analyst',
+    dates: 'Aug 2022 - May 2023',
+    bullets: [
+      { text: ['Built numerous machine learning models to identify multiclass pitch types using XGBoost, KNN, and clustering methods'] },
+      { text: ['Developed a custom Elo system to predict win probability of games and strength of teams at different points in the season'] },
+      { text: ['Designed interactive dashboards using R Shiny to assist in driving decision making for our coaching staff on and off the field'] },
+    ],
+  },
+];
+
+export const RESUME_EDUCATION: { school: string; degrees: Degree[] } = {
+  school: 'University of Missouri - Columbia, Missouri',
+  degrees: [
+    {
+      degree: 'Master of Science in Data Science and Analytics',
+      detail:
+        'Major in High Performance Computing - GPA 3.93. Studies: Statistics, Visualization, Web Scraping, Data Mining, Database Design, Machine Learning, Cloud Computing',
+      dates: 'Aug 2021 - May 2023',
+    },
+    {
+      degree: 'Bachelor of Science in Parks, Recreation and Sport',
+      detail:
+        'Major in Sport Management, Minor in Hospitality Management - GPA 3.66 (Cum Laude, Dean’s List)',
+      dates: 'Aug 2017 - May 2020',
+    },
+  ],
+};
+
+export const RESUME_PROJECTS: Bullet[] = [
+  {
+    text: [
+      'Contributed to multiple Driveline research studies and wrote about them for the Driveline Blog (',
+      { text: 'Bat Path', url: 'https://drivelinebaseball.com/blogs/blog/optimizing-bat-paths' },
+      ', ',
+      {
+        text: 'Force Plates',
+        url: 'https://drivelinebaseball.com/blogs/blog/forcing-rotation-exploring-lead-leg-force-curves-and-rotation-in-hitters',
+      },
+      ', ',
+      {
+        text: 'Command Study',
+        url: 'https://drivelinebaseball.com/blogs/blog/the-interaction-of-biomechanics-and-command',
+      },
+      ')',
+    ],
+  },
+  {
+    text: [
+      'Developed a ',
+      { text: 'Twitter', url: 'https://x.com/SamEhrlich' },
+      ' account to share research findings and engage with the analytics community through content creation and discussions',
+    ],
+    sub: [
+      [
+        'Built a community of over 1000 followers with posts featured on ',
+        { text: 'Pitching Ninja', url: 'https://www.tiktok.com/@pitchingninja/video/7625681062009605389' },
+        ' and ',
+        { text: 'MLB', url: 'https://www.mlb.com/news/mlb-stats-to-trust-in-early-april' },
+        ' with engagement over 1M',
+      ],
+    ],
+  },
+  {
+    text: [
+      { text: '“NCAA Tournament Sim”', url: 'https://samehrlich.github.io/NCAA_bid_predictions/' },
+      ' Elo ranking model for NCAA D1 Baseball teams based on historical performances using data from 2021-2024',
+    ],
+    sub: [
+      ['Successfully predicted 3 of the final 8 teams that made it to Omaha in the 2025 Men’s College World Series'],
+      ['Generated NCAA tournament championship probability forecasts for all teams through Monte Carlo simulation of 20,000 brackets'],
+    ],
+  },
+  {
+    text: [
+      { text: '“Stuff Model”', url: 'https://github.com/SamEhrlich/StuffModel6-24-24' },
+      ' Pitching grade model that applies run values to a pitch solely on the movement profile, agnostic of location',
+    ],
+    sub: [
+      ['Data cleaning, EDA using domain knowledge, research, clustering methods, and sampling techniques for imbalance classes'],
+      ['Utilized XGBoosting paired with Optuna for hyperparameter tuning to generate predictions that best minimized the MSE'],
+    ],
+  },
+];
+
+export const RESUME_SKILLS: { label: string; body: RichText }[] = [
+  {
+    label: 'Languages and Software',
+    body: [
+      'SQL (PostgreSQL, MySQL, NoSQL, MongoDB, ClickHouse), R (RStudio, Shiny, Tidyverse, ggplot2, xgboost), Python (Pandas, NumPy, Matplotlib, Seaborn, Plotly, scikit-learn, BS4, cv2, ultralytics, mediapipe, FastAPI, Optuna), Cloud Computing (GCP, AWS), Applied AI (Claude, OpenAI, Gemini, MoonDream, SAM3, autoresearch), React, GitHub, Hugging Face, CVAT, Roboflow',
+    ],
+  },
+  {
+    label: 'Skills & Certs',
+    body: [
+      { text: 'Claude AI Fluency Certification', url: 'https://verify.skilljar.com/c/3mmgf4cazn6x' },
+      ', Applied Machine Learning, Advanced Visualization, Parameter Tuning, Data Engineering, Bayesian and statistical modeling, Computer Vision (Object Detection, Segmentation, Image Classification, Visual Tracking), Hyperparameter Optimization',
+    ],
+  },
+];
