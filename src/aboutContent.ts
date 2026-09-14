@@ -40,7 +40,7 @@ export const PROFILE = {
   /** One line under the name. */
   tagline: 'Baseball Operations Analyst — Driveline Baseball' as string,
   /** What you work on. Rendered as one line, middot-separated. */
-  focus: ['MLB Analysis', 'Computer Vision', 'In-Gym Support'] as string[],
+  focus: ['MLB Analysis', 'Computer Vision'] as string[],
   /** Import an image into src/assets/ and assign it here; falls back to initials when empty. */
   headshot: headshot,
 };
@@ -63,6 +63,14 @@ export const MEDIA: Entry[] = [
     date: 'August 2026',
     summary: 'Analysis contributed.',
     logo: mlbLogo,
+  },
+  {
+    title: 'Inside Baseball\u2019s Next Analytics Revolution',
+    url: 'https://podcasts.apple.com/us/podcast/inside-baseballs-next-analytics-revolution/id1486883874?i=1000787044400',
+    source: 'Rates & Barrels',
+    date: 'August 2026',
+    summary: 'Recorded on site at Saberseminar.',
+    logo: ratesAndBarrelsLogo,
   },
   {
     title: 'Searching for answers to Raleigh\u2019s mysterious struggles',
@@ -138,5 +146,8 @@ export const MEDIA: Entry[] = [
   },
 ];
 
-/** Work samples: research, repos, projects. */
+/** Work samples: research, repos, projects. Hidden until there is something to show;
+    flip to true and fill PORTFOLIO to bring the section and its nav tab back. */
+export const SHOW_PORTFOLIO = false;
+
 export const PORTFOLIO: Entry[] = [];

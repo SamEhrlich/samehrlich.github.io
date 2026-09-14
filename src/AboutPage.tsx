@@ -8,6 +8,7 @@ import {
   RESUME_URL,
   MEDIA,
   PORTFOLIO,
+  SHOW_PORTFOLIO,
   type Entry,
 } from './aboutContent';
 import { Icon, type IconName } from './icons';
@@ -35,7 +36,7 @@ const SECTION_ANCHOR_OFFSET = 72;
 
 const SECTIONS = [
   { id: 'media', label: 'In the Media' },
-  { id: 'portfolio', label: 'Portfolio' },
+  ...(SHOW_PORTFOLIO ? [{ id: 'portfolio', label: 'Portfolio' }] : []),
 ];
 
 /** Socials worth prompting for; ghosted in the link row until they are added. */
@@ -190,7 +191,9 @@ const AboutPage: React.FC = () => {
   );
 
   return (
-    <div className="resources-page about-page has-section-nav">
+    <div
+      className={`resources-page about-page${SECTIONS.length > 1 ? ' has-section-nav' : ''}`}
+    >
       <nav className="about-viewswitch">
         <a className="about-viewswitch-link" href="/">
           Resources
@@ -297,6 +300,7 @@ const AboutPage: React.FC = () => {
         )}
       </header>
 
+      {SECTIONS.length > 1 && (
       <nav className="resources-nav">
         {SECTIONS.map((section) => (
           <a
@@ -308,6 +312,7 @@ const AboutPage: React.FC = () => {
           </a>
         ))}
       </nav>
+      )}
 
       <EntrySection
         id="media"
@@ -318,13 +323,15 @@ const AboutPage: React.FC = () => {
       />
       {isResumeOpen && <ResumeModal onClose={() => setIsResumeOpen(false)} />}
 
-      <EntrySection
-        id="portfolio"
-        title="Portfolio"
-        entries={PORTFOLIO}
-        source="PORTFOLIO"
-        hint="{ title, url, source?, date?, summary?, logo?, icon? } — work samples"
-      />
+      {SHOW_PORTFOLIO && (
+        <EntrySection
+          id="portfolio"
+          title="Portfolio"
+          entries={PORTFOLIO}
+          source="PORTFOLIO"
+          hint="{ title, url, source?, date?, summary?, logo?, icon? } — work samples"
+        />
+      )}
     </div>
   );
 };
