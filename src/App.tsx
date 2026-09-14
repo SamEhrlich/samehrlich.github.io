@@ -1,6 +1,7 @@
 import React from 'react';
 import './resources.css';
 import './about.css';
+import { Icon } from './icons';
 import mvpMachineCover from './assets/book_covers/mvp_machine_cover.jpg';
 import statisticalRethinkingCover from './assets/book_covers/statistical_rethinking_2_cover.jpg';
 import abdwrCover from './assets/book_covers/abdwr_cover.png';
@@ -634,6 +635,28 @@ const App: React.FC = () => {
               </h3>
               <p className="resources-item-summary">
                 Training, performance, and coaching insights from Crider Performance.
+              </p>
+            </div>
+          </article>
+          <article className="resources-item-card">
+            {/* No publication mark on the Substack — the platform glyph reads better here
+                than the author's personal photo, which is all the site offers. */}
+            <div className="resources-item-media">
+              <Icon name="substack" size={20} />
+            </div>
+            <div className="resources-item-content">
+              <h3>
+                <a
+                  className="resources-item-title-link"
+                  href="https://wolfishn.substack.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Nava Wolfish
+                </a>
+              </h3>
+              <p className="resources-item-summary">
+                Baseball research and writing on Substack.
               </p>
             </div>
           </article>
