@@ -43,6 +43,7 @@ import nickWanTwitterProfile from './assets/twitter_pics/nick_wan.jpg';
 import robertFreyProfile from './assets/twitter_pics/robert_frey.jpg';
 import jasonBernardProfile from './assets/twitter_pics/jason_bernard.jpg';
 import joshHejkaProfile from './assets/twitter_pics/josh_hejka.jpg';
+import tomKimProfile from './assets/twitter_pics/tom_kim.jpg';
 import kyleBlandProfile from './assets/twitter_pics/kyle_bland.jpg';
 import marekRamiloProfile from './assets/twitter_pics/marek_ramilo.jpg';
 import stephenSuttonBrownProfile from './assets/twitter_pics/stephen_sutton_brown.jpg';
@@ -660,6 +661,46 @@ const App: React.FC = () => {
               </p>
             </div>
           </article>
+          <article className="resources-item-card">
+            <div className="resources-item-media">
+              <img src={drivelineLogo} alt="Driveline Baseball logo" loading="lazy" />
+            </div>
+            <div className="resources-item-content">
+              <h3>
+                <a
+                  className="resources-item-title-link"
+                  href="https://github.com/drivelineresearch/openbiomechanics"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  openbiomechanics
+                </a>
+              </h3>
+              <p className="resources-item-summary">
+                Open-source, anonymized elite-level motion capture data, run by Driveline Baseball.
+              </p>
+            </div>
+          </article>
+          <article className="resources-item-card">
+            <div className="resources-item-media">
+              <Icon name="github" size={20} />
+            </div>
+            <div className="resources-item-content">
+              <h3>
+                <a
+                  className="resources-item-title-link"
+                  href="https://github.com/tomdoyo/open-command"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  OpenCommand
+                </a>
+              </h3>
+              <p className="resources-item-summary">
+                Open-source command reports built from computer-vision pitch tracking.
+              </p>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -1138,6 +1179,19 @@ const App: React.FC = () => {
                 </a>
               </h3>
               <p className="resources-item-author">@CrumpledJumper</p>
+            </div>
+          </article>
+          <article className="resources-item-card">
+            <div className="resources-item-media">
+              <img src={tomKimProfile} alt="Tom Kim profile" loading="lazy" />
+            </div>
+            <div className="resources-item-content">
+              <h3>
+                <a className="resources-item-title-link" href="https://x.com/tomdoyo" target="_blank" rel="noreferrer">
+                  Tom Kim
+                </a>
+              </h3>
+              <p className="resources-item-author">@tomdoyo</p>
             </div>
           </article>
           <article className="resources-item-card">
