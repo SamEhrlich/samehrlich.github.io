@@ -42,7 +42,6 @@ const SECTION_ANCHOR_OFFSET = 72;
 
 const SECTIONS = [
   { id: 'media', label: 'In the Media' },
-  { id: 'resume', label: 'Resume' },
   ...(SHOW_PORTFOLIO ? [{ id: 'portfolio', label: 'Portfolio' }] : []),
 ];
 
@@ -141,6 +140,9 @@ const EntrySection: React.FC<{
 
 const AboutPage: React.FC = () => {
   const [activeSection, setActiveSection] = React.useState(SECTIONS[0].id);
+  // The resume stays off the page until asked for; nobody lands on About and reads it by
+  // default. Opening scrolls to it, closing returns focus to the button that opened it.
+  const [isResumeOpen, setIsResumeOpen] = React.useState(false);
 
   React.useEffect(() => {
     const syncActiveSection = () => {
@@ -178,7 +180,13 @@ const AboutPage: React.FC = () => {
       )
       .forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, []);
+  }, [isResumeOpen]);
+
+  React.useEffect(() => {
+    if (!isResumeOpen) return;
+    // scroll-margin-top on .resources-section puts this at the same offset a nav anchor lands on.
+    document.getElementById('resume')!.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [isResumeOpen]);
 
   const missingSocials = SUGGESTED_SOCIALS.filter(
     (suggestion) => !SOCIALS.some((social) => social.icon === suggestion.icon)
@@ -265,10 +273,15 @@ const AboutPage: React.FC = () => {
               </span>
             ))}
           {RESUME_URL ? (
-            <a className="about-cta" href="#resume">
+            <button
+              className="about-cta"
+              onClick={() => setIsResumeOpen((open) => !open)}
+              aria-expanded={isResumeOpen}
+              aria-controls="resume"
+            >
               <Icon name="resume" />
-              Resume
-            </a>
+              {isResumeOpen ? 'Hide resume' : 'Resume'}
+            </button>
           ) : (
             DRAFT && (
               <span className="about-cta is-ghost" aria-hidden="true">
@@ -316,6 +329,7 @@ const AboutPage: React.FC = () => {
         hint="{ title, url, source?, date?, summary? } — podcasts, interviews, articles"
       />
 
+      {isResumeOpen && (
       <section className="resources-section" id="resume">
         <div className="resources-section-header resume-header">
           <h2>Resume</h2>
@@ -370,6 +384,7 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
       </section>
+      )}
 
       {SHOW_PORTFOLIO && (
         <EntrySection
