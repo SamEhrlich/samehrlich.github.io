@@ -6,7 +6,9 @@
 
 import type { IconName } from './icons';
 import headshot from './assets/about/headshot.jpg';
-import resume from './assets/about/resume.pdf';
+// The published copy with the home address and phone number redacted out of the
+// content stream. resume.pdf is the full original and is never shipped.
+import resume from './assets/about/resume_public.pdf';
 import mlbLogo from './assets/about/sources/mlb.png';
 import drivelineLogo from './assets/about/sources/driveline.webp';
 import sabrLogo from './assets/about/sources/sabr.png';

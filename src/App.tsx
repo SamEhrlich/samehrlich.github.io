@@ -23,6 +23,7 @@ import athleticLogo from './assets/links/the_athletic_logo.png';
 import ratesAndBarrelsLogo from './assets/links/rates_and_barrels.jpg';
 import pybaseballLogo from './assets/links/pybaseball_logo.jpg';
 import criderLogo from './assets/links/crider_logo.jpg';
+import openCommandLogo from './assets/links/opencommand.jpg';
 import nickWanProfile from './assets/video_profiles/nick_wan.jpg';
 import threeBlueOneBrownProfile from './assets/video_profiles/3b1b.jpg';
 import roboflowProfile from './assets/video_profiles/roboflow.png';
@@ -683,7 +684,7 @@ const App: React.FC = () => {
           </article>
           <article className="resources-item-card">
             <div className="resources-item-media">
-              <Icon name="github" size={20} />
+              <img src={openCommandLogo} alt="OpenCommand logo" loading="lazy" />
             </div>
             <div className="resources-item-content">
               <h3>

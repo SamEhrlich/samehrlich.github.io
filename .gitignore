@@ -8,3 +8,7 @@ npm-debug.log*
 # Raw portfolio staging folder — 277 MB of source video/images, and it holds client and
 # personal material. Curated, web-sized copies go in src/assets/about/portfolio/ instead.
 portfolio/
+
+# The unredacted resume — it carries a home address and phone number, and this repo is
+# public. Only resume_public.pdf (address and phone redacted) is tracked and shipped.
+src/assets/about/resume.pdf
