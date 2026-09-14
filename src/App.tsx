@@ -152,23 +152,45 @@ const App: React.FC = () => {
         <div className="resources-items-grid resources-grid--books">
           <article className="resources-item-card">
             <div className="resources-item-media">
-              <img src={mvpMachineCover} alt="The MVP Machine book cover" loading="lazy" />
+              <img src={abdwrCover} alt="Analyzing Baseball Data with R book cover" loading="lazy" />
             </div>
             <div className="resources-item-content">
               <h3>
                 <a
                   className="resources-item-title-link"
-                  href="https://www.amazon.com/MVP-Machine-Baseballs-Nonconformists-Players/dp/1541698940"
+                  href="https://beanumber.github.io/abdwr3e/"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  The MVP Machine
+                  Analyzing Baseball Data with R
                 </a>
               </h3>
-              <p className="resources-item-author">By Ben Lindbergh and Travis Sawchik</p>
+              <p className="resources-item-author">By Jim Albert</p>
               <p className="resources-item-summary">
-                A look at how data-driven player development reshaped modern baseball, spotlighting
-                teams and innovators who used analytics to build better hitters and pitchers.
+                A practical guide to exploring baseball data with R, covering core concepts and
+                modeling approaches.
+              </p>
+            </div>
+          </article>
+          <article className="resources-item-card">
+            <div className="resources-item-media">
+              <img src={futureValueCover} alt="Future Value book cover" loading="lazy" />
+            </div>
+            <div className="resources-item-content">
+              <h3>
+                <a
+                  className="resources-item-title-link"
+                  href="https://www.amazon.com/Future-Value-Battle-Baseballs-Superstar/dp/1629377678"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Future Value
+                </a>
+              </h3>
+              <p className="resources-item-author">By Eric Longenhagen and Kiley McDaniel</p>
+              <p className="resources-item-summary">
+                An inside look at how modern teams evaluate and develop prospects, and the pressure
+                to find baseball&apos;s next superstar.
               </p>
             </div>
           </article>
@@ -208,28 +230,6 @@ const App: React.FC = () => {
           </article>
           <article className="resources-item-card">
             <div className="resources-item-media">
-              <img src={abdwrCover} alt="Analyzing Baseball Data with R book cover" loading="lazy" />
-            </div>
-            <div className="resources-item-content">
-              <h3>
-                <a
-                  className="resources-item-title-link"
-                  href="https://beanumber.github.io/abdwr3e/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Analyzing Baseball Data with R
-                </a>
-              </h3>
-              <p className="resources-item-author">By Jim Albert</p>
-              <p className="resources-item-summary">
-                A practical guide to exploring baseball data with R, covering core concepts and
-                modeling approaches.
-              </p>
-            </div>
-          </article>
-          <article className="resources-item-card">
-            <div className="resources-item-media">
               <img src={theBookCover} alt="The Book book cover" loading="lazy" />
             </div>
             <div className="resources-item-content">
@@ -255,23 +255,23 @@ const App: React.FC = () => {
           </article>
           <article className="resources-item-card">
             <div className="resources-item-media">
-              <img src={futureValueCover} alt="Future Value book cover" loading="lazy" />
+              <img src={mvpMachineCover} alt="The MVP Machine book cover" loading="lazy" />
             </div>
             <div className="resources-item-content">
               <h3>
                 <a
                   className="resources-item-title-link"
-                  href="https://www.amazon.com/Future-Value-Battle-Baseballs-Superstar/dp/1629377678"
+                  href="https://www.amazon.com/MVP-Machine-Baseballs-Nonconformists-Players/dp/1541698940"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Future Value
+                  The MVP Machine
                 </a>
               </h3>
-              <p className="resources-item-author">By Eric Longenhagen and Kiley McDaniel</p>
+              <p className="resources-item-author">By Ben Lindbergh and Travis Sawchik</p>
               <p className="resources-item-summary">
-                An inside look at how modern teams evaluate and develop prospects, and the pressure
-                to find baseball&apos;s next superstar.
+                A look at how data-driven player development reshaped modern baseball, spotlighting
+                teams and innovators who used analytics to build better hitters and pitchers.
               </p>
             </div>
           </article>
@@ -415,106 +415,6 @@ const App: React.FC = () => {
         <div className="resources-items-grid resources-grid--links">
           <article className="resources-item-card">
             <div className="resources-item-media">
-              <img src={savantLogo} alt="Baseball Savant logo" loading="lazy" />
-            </div>
-            <div className="resources-item-content">
-              <h3>
-                <a
-                  className="resources-item-title-link"
-                  href="https://baseballsavant.mlb.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Baseball Savant
-                </a>
-              </h3>
-              <p className="resources-item-summary">
-                Statcast data, leaderboards, and player tools from MLB.
-              </p>
-            </div>
-          </article>
-          <article className="resources-item-card">
-            <div className="resources-item-media">
-              <img src={pybaseballLogo} alt="pybaseball logo" loading="lazy" />
-            </div>
-            <div className="resources-item-content">
-              <h3>
-                <a
-                  className="resources-item-title-link"
-                  href="https://github.com/jldbc/pybaseball"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  pybaseball
-                </a>
-              </h3>
-              <p className="resources-item-summary">
-                Python library for accessing baseball data from popular sources.
-              </p>
-            </div>
-          </article>
-          <article className="resources-item-card">
-            <div className="resources-item-media">
-              <img src={ratesAndBarrelsLogo} alt="Rates & Barrels logo" loading="lazy" />
-            </div>
-            <div className="resources-item-content">
-              <h3>
-                <a
-                  className="resources-item-title-link"
-                  href="https://www.youtube.com/c/RatesBarrels"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Rates & Barrels
-                </a>
-              </h3>
-              <p className="resources-item-summary">
-                Baseball analysis and fantasy-focused podcast content.
-              </p>
-            </div>
-          </article>
-          <article className="resources-item-card">
-            <div className="resources-item-media">
-              <img src={athleticLogo} alt="The Athletic logo" loading="lazy" />
-            </div>
-            <div className="resources-item-content">
-              <h3>
-                <a
-                  className="resources-item-title-link"
-                  href="https://www.nytimes.com/athletic/mlb/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  The Athletic MLB
-                </a>
-              </h3>
-              <p className="resources-item-summary">
-                MLB coverage, reporting, and analysis from The Athletic.
-              </p>
-            </div>
-          </article>
-          <article className="resources-item-card">
-            <div className="resources-item-media">
-              <img src={riskOfRuinLogo} alt="Risk of Ruin podcast logo" loading="lazy" />
-            </div>
-            <div className="resources-item-content">
-              <h3>
-                <a
-                  className="resources-item-title-link"
-                  href="https://www.youtube.com/channel/UCHlTta3BXCoPbMvHHwslirg"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Risk of Ruin Podcast
-                </a>
-              </h3>
-              <p className="resources-item-summary">
-                Baseball analytics conversations covering research, strategy, and modeling.
-              </p>
-            </div>
-          </article>
-          <article className="resources-item-card">
-            <div className="resources-item-media">
               <img src={bbRefLogo} alt="Baseball-Reference logo" loading="lazy" />
             </div>
             <div className="resources-item-content">
@@ -535,41 +435,41 @@ const App: React.FC = () => {
           </article>
           <article className="resources-item-card">
             <div className="resources-item-media">
-              <img src={pitcherListLogo} alt="Pitcher List logo" loading="lazy" />
+              <img src={savantLogo} alt="Baseball Savant logo" loading="lazy" />
             </div>
             <div className="resources-item-content">
               <h3>
                 <a
                   className="resources-item-title-link"
-                  href="https://pitcherlist.com/"
+                  href="https://baseballsavant.mlb.com/"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Pitcher List
+                  Baseball Savant
                 </a>
               </h3>
               <p className="resources-item-summary">
-                Analysis, leaderboards, and player tools with a focus on pitchers.
+                Statcast data, leaderboards, and player tools from MLB.
               </p>
             </div>
           </article>
           <article className="resources-item-card">
             <div className="resources-item-media">
-              <img src={fangraphsLinkLogo} alt="FanGraphs logo" loading="lazy" />
+              <img src={criderLogo} alt="Crider Performance logo" loading="lazy" />
             </div>
             <div className="resources-item-content">
               <h3>
                 <a
                   className="resources-item-title-link"
-                  href="https://www.fangraphs.com/"
+                  href="https://www.criderperformance.com/blog"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  FanGraphs
+                  Crider Performance Blog
                 </a>
               </h3>
               <p className="resources-item-summary">
-                Analytics-driven baseball coverage, leaderboards, and research.
+                Training, performance, and coaching insights from Crider Performance.
               </p>
             </div>
           </article>
@@ -622,21 +522,21 @@ const App: React.FC = () => {
           </article>
           <article className="resources-item-card">
             <div className="resources-item-media">
-              <img src={criderLogo} alt="Crider Performance logo" loading="lazy" />
+              <img src={fangraphsLinkLogo} alt="FanGraphs logo" loading="lazy" />
             </div>
             <div className="resources-item-content">
               <h3>
                 <a
                   className="resources-item-title-link"
-                  href="https://www.criderperformance.com/blog"
+                  href="https://www.fangraphs.com/"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Crider Performance Blog
+                  FanGraphs
                 </a>
               </h3>
               <p className="resources-item-summary">
-                Training, performance, and coaching insights from Crider Performance.
+                Analytics-driven baseball coverage, leaderboards, and research.
               </p>
             </div>
           </article>
@@ -702,6 +602,106 @@ const App: React.FC = () => {
               </p>
             </div>
           </article>
+          <article className="resources-item-card">
+            <div className="resources-item-media">
+              <img src={pitcherListLogo} alt="Pitcher List logo" loading="lazy" />
+            </div>
+            <div className="resources-item-content">
+              <h3>
+                <a
+                  className="resources-item-title-link"
+                  href="https://pitcherlist.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Pitcher List
+                </a>
+              </h3>
+              <p className="resources-item-summary">
+                Analysis, leaderboards, and player tools with a focus on pitchers.
+              </p>
+            </div>
+          </article>
+          <article className="resources-item-card">
+            <div className="resources-item-media">
+              <img src={pybaseballLogo} alt="pybaseball logo" loading="lazy" />
+            </div>
+            <div className="resources-item-content">
+              <h3>
+                <a
+                  className="resources-item-title-link"
+                  href="https://github.com/jldbc/pybaseball"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  pybaseball
+                </a>
+              </h3>
+              <p className="resources-item-summary">
+                Python library for accessing baseball data from popular sources.
+              </p>
+            </div>
+          </article>
+          <article className="resources-item-card">
+            <div className="resources-item-media">
+              <img src={ratesAndBarrelsLogo} alt="Rates & Barrels logo" loading="lazy" />
+            </div>
+            <div className="resources-item-content">
+              <h3>
+                <a
+                  className="resources-item-title-link"
+                  href="https://www.youtube.com/c/RatesBarrels"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Rates & Barrels
+                </a>
+              </h3>
+              <p className="resources-item-summary">
+                Baseball analysis and fantasy-focused podcast content.
+              </p>
+            </div>
+          </article>
+          <article className="resources-item-card">
+            <div className="resources-item-media">
+              <img src={riskOfRuinLogo} alt="Risk of Ruin podcast logo" loading="lazy" />
+            </div>
+            <div className="resources-item-content">
+              <h3>
+                <a
+                  className="resources-item-title-link"
+                  href="https://www.youtube.com/channel/UCHlTta3BXCoPbMvHHwslirg"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Risk of Ruin Podcast
+                </a>
+              </h3>
+              <p className="resources-item-summary">
+                Baseball analytics conversations covering research, strategy, and modeling.
+              </p>
+            </div>
+          </article>
+          <article className="resources-item-card">
+            <div className="resources-item-media">
+              <img src={athleticLogo} alt="The Athletic logo" loading="lazy" />
+            </div>
+            <div className="resources-item-content">
+              <h3>
+                <a
+                  className="resources-item-title-link"
+                  href="https://www.nytimes.com/athletic/mlb/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  The Athletic MLB
+                </a>
+              </h3>
+              <p className="resources-item-summary">
+                MLB coverage, reporting, and analysis from The Athletic.
+              </p>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -712,41 +712,21 @@ const App: React.FC = () => {
         <div className="resources-items-grid resources-grid--video">
           <article className="resources-item-card">
             <div className="resources-item-media">
-              <img src={tidxProfile} alt="TidyX screencast profile" loading="lazy" />
+              <img src={threeBlueOneBrownProfile} alt="3Blue1Brown profile" loading="lazy" />
             </div>
             <div className="resources-item-content">
               <h3>
                 <a
                   className="resources-item-title-link"
-                  href="https://www.youtube.com/@TidyX_screencast"
+                  href="https://www.youtube.com/@3blue1brown"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  TidyX screencast
+                  3Blue1Brown
                 </a>
               </h3>
               <p className="resources-item-summary">
-                Tidyverse-focused screencasts and data visualization workflows.
-              </p>
-            </div>
-          </article>
-          <article className="resources-item-card">
-            <div className="resources-item-media">
-              <img src={roboflowProfile} alt="Roboflow profile" loading="lazy" />
-            </div>
-            <div className="resources-item-content">
-              <h3>
-                <a
-                  className="resources-item-title-link"
-                  href="https://www.youtube.com/@Roboflow"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Roboflow
-                </a>
-              </h3>
-              <p className="resources-item-summary">
-                Computer vision tutorials, demos, and applied ML workflows.
+                Visual explanations of math and intuition-heavy concepts.
               </p>
             </div>
           </article>
@@ -772,26 +752,6 @@ const App: React.FC = () => {
           </article>
           <article className="resources-item-card">
             <div className="resources-item-media">
-              <img src={threeBlueOneBrownProfile} alt="3Blue1Brown profile" loading="lazy" />
-            </div>
-            <div className="resources-item-content">
-              <h3>
-                <a
-                  className="resources-item-title-link"
-                  href="https://www.youtube.com/@3blue1brown"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  3Blue1Brown
-                </a>
-              </h3>
-              <p className="resources-item-summary">
-                Visual explanations of math and intuition-heavy concepts.
-              </p>
-            </div>
-          </article>
-          <article className="resources-item-card">
-            <div className="resources-item-media">
               <img src={nickWanProfile} alt="Nick Wan profile" loading="lazy" />
             </div>
             <div className="resources-item-content">
@@ -807,6 +767,46 @@ const App: React.FC = () => {
               </h3>
               <p className="resources-item-summary">
                 Baseball analysis and player development breakdowns.
+              </p>
+            </div>
+          </article>
+          <article className="resources-item-card">
+            <div className="resources-item-media">
+              <img src={roboflowProfile} alt="Roboflow profile" loading="lazy" />
+            </div>
+            <div className="resources-item-content">
+              <h3>
+                <a
+                  className="resources-item-title-link"
+                  href="https://www.youtube.com/@Roboflow"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Roboflow
+                </a>
+              </h3>
+              <p className="resources-item-summary">
+                Computer vision tutorials, demos, and applied ML workflows.
+              </p>
+            </div>
+          </article>
+          <article className="resources-item-card">
+            <div className="resources-item-media">
+              <img src={tidxProfile} alt="TidyX screencast profile" loading="lazy" />
+            </div>
+            <div className="resources-item-content">
+              <h3>
+                <a
+                  className="resources-item-title-link"
+                  href="https://www.youtube.com/@TidyX_screencast"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  TidyX screencast
+                </a>
+              </h3>
+              <p className="resources-item-summary">
+                Tidyverse-focused screencasts and data visualization workflows.
               </p>
             </div>
           </article>
