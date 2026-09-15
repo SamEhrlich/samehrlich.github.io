@@ -59,6 +59,14 @@ export const RESUME_URL: string = resume;
 
 export const MEDIA: Entry[] = [
   {
+    title: 'Bat Path and Hitting Biomechanics Through Motion Capture',
+    url: 'https://www.youtube.com/watch?v=7j00kQjeA8o',
+    source: 'Saberseminar',
+    date: 'September 2026',
+    summary: 'Presented with Conner Pelletier.',
+    logo: drivelineLogo,
+  },
+  {
     title: "What's 'wrong' with Skenes? Let's dissect his recent slump",
     url: 'https://www.mlb.com/news/paul-skenes-2026-metrics-comparison-deep-dive',
     source: 'MLB.com',
