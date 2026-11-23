@@ -67,6 +67,7 @@ import davidPawlanProfile from './assets/twitter_pics/david_pawlan.png';
 import dylanRobertsonProfile from './assets/twitter_pics/dylan_robertson.png';
 import noahDenglerProfile from './assets/twitter_pics/noah_dengler.png';
 import tomasNelsonProfile from './assets/twitter_pics/tomas_nelson.png';
+import robertStockProfile from './assets/twitter_pics/robert_stock.png';
 
 // Must match `scroll-margin-top` on .resources-section in resources.css: an anchor click
 // lands the target section's top at exactly this offset, so the active-tab threshold has to
@@ -1184,6 +1185,19 @@ const App: React.FC = () => {
                 </a>
               </h3>
               <p className="resources-item-author">@RobertFrey40</p>
+            </div>
+          </article>
+          <article className="resources-item-card">
+            <div className="resources-item-media">
+              <img src={robertStockProfile} alt="Robert Stock profile" loading="lazy" />
+            </div>
+            <div className="resources-item-content">
+              <h3>
+                <a className="resources-item-title-link" href="https://x.com/RobertStock6" target="_blank" rel="noreferrer">
+                  Robert Stock
+                </a>
+              </h3>
+              <p className="resources-item-author">@RobertStock6</p>
             </div>
           </article>
           <article className="resources-item-card">
