@@ -13,6 +13,7 @@ import mlbLogo from './assets/about/sources/mlb.png';
 import drivelineLogo from './assets/about/sources/driveline.webp';
 import sabrLogo from './assets/about/sources/sabr.png';
 import ratesAndBarrelsLogo from './assets/about/sources/rates_and_barrels.jpg';
+import roboflowLogo from './assets/video_profiles/roboflow.png';
 
 /** Set to false before publishing. */
 export const DRAFT = false;
@@ -58,6 +59,14 @@ export const SOCIALS: Social[] = [
 export const RESUME_URL: string = resume;
 
 export const MEDIA: Entry[] = [
+  {
+    title: 'How AI is Changing Baseball',
+    url: 'https://www.youtube.com/watch?v=ppUfICfDoZU',
+    source: 'Roboflow Visual Intelligence Summit',
+    date: 'November 2026',
+    summary: 'Presented with Kyle Boddy.',
+    logo: roboflowLogo,
+  },
   {
     title: 'Bat Path and Hitting Biomechanics Through Motion Capture',
     url: 'https://www.youtube.com/watch?v=7j00kQjeA8o',
