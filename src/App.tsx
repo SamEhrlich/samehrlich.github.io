@@ -8,6 +8,8 @@ import abdwrCover from './assets/book_covers/abdwr_cover.png';
 import theBookCover from './assets/book_covers/the_book_cover.jpg';
 import futureValueCover from './assets/book_covers/future_value_cover.jpg';
 import unhittableCover from './assets/book_covers/unhittable.jpg';
+import moneyballCover from './assets/book_covers/moneyball_cover.jpg';
+import astroballCover from './assets/book_covers/astroball_cover.jpg';
 import uramLogo from './assets/job_listings/URAM_logo.avif';
 import teamworkOnlineLogo from './assets/job_listings/teamwork_online_logo.png';
 import saberpowersLogo from './assets/job_listings/saberpowers_favicon_dark.png';
@@ -68,6 +70,7 @@ import dylanRobertsonProfile from './assets/twitter_pics/dylan_robertson.png';
 import noahDenglerProfile from './assets/twitter_pics/noah_dengler.png';
 import tomasNelsonProfile from './assets/twitter_pics/tomas_nelson.png';
 import robertStockProfile from './assets/twitter_pics/robert_stock.png';
+import rubiconProfile from './assets/twitter_pics/rubicon.png';
 
 // Must match `scroll-margin-top` on .resources-section in resources.css: an anchor click
 // lands the target section's top at exactly this offset, so the active-tab threshold has to
@@ -179,6 +182,28 @@ const App: React.FC = () => {
           </article>
           <article className="resources-item-card">
             <div className="resources-item-media">
+              <img src={astroballCover} alt="Astroball book cover" loading="lazy" />
+            </div>
+            <div className="resources-item-content">
+              <h3>
+                <a
+                  className="resources-item-title-link"
+                  href="https://www.amazon.com/s?k=astroball+ben+reiter"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Astroball
+                </a>
+              </h3>
+              <p className="resources-item-author">By Ben Reiter</p>
+              <p className="resources-item-summary">
+                How the Houston Astros paired analytics with scouting to go from one of the worst
+                teams in baseball to 2017 World Series champions.
+              </p>
+            </div>
+          </article>
+          <article className="resources-item-card">
+            <div className="resources-item-media">
               <img src={futureValueCover} alt="Future Value book cover" loading="lazy" />
             </div>
             <div className="resources-item-content">
@@ -196,6 +221,28 @@ const App: React.FC = () => {
               <p className="resources-item-summary">
                 An inside look at how modern teams evaluate and develop prospects, and the pressure
                 to find baseball&apos;s next superstar.
+              </p>
+            </div>
+          </article>
+          <article className="resources-item-card">
+            <div className="resources-item-media">
+              <img src={moneyballCover} alt="Moneyball book cover" loading="lazy" />
+            </div>
+            <div className="resources-item-content">
+              <h3>
+                <a
+                  className="resources-item-title-link"
+                  href="https://www.amazon.com/s?k=moneyball+michael+lewis"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Moneyball
+                </a>
+              </h3>
+              <p className="resources-item-author">By Michael Lewis</p>
+              <p className="resources-item-summary">
+                The story of how Billy Beane&apos;s low-payroll Oakland A&apos;s used undervalued
+                stats like on-base percentage to compete with baseball&apos;s richest teams.
               </p>
             </div>
           </article>
@@ -1198,6 +1245,27 @@ const App: React.FC = () => {
                 </a>
               </h3>
               <p className="resources-item-author">@RobertStock6</p>
+            </div>
+          </article>
+          <article className="resources-item-card">
+            <div className="resources-item-media">
+              <img src={rubiconProfile} alt="Rubicon Performance profile" loading="lazy" />
+            </div>
+            <div className="resources-item-content">
+              <h3>
+                <a className="resources-item-title-link" href="https://x.com/RubiconPerform" target="_blank" rel="noreferrer">
+                  Rubicon Performance
+                </a>
+              </h3>
+              <p className="resources-item-author">@RubiconPerform</p>
+              <a
+                className="resources-item-link"
+                href="https://www.rubicon-performance.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Website
+              </a>
             </div>
           </article>
           <article className="resources-item-card">
