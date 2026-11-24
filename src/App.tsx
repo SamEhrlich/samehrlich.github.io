@@ -736,6 +736,31 @@ const App: React.FC = () => {
           </article>
           <article className="resources-item-card">
             <div className="resources-item-media">
+              <img src={rubiconProfile} alt="Rubicon Performance logo" loading="lazy" />
+            </div>
+            <div className="resources-item-content">
+              <h3>
+                <a
+                  className="resources-item-title-link"
+                  href="https://www.rubicon-performance.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Rubicon Performance
+                </a>
+              </h3>
+              <a
+                className="resources-item-link"
+                href="https://x.com/RubiconPerform"
+                target="_blank"
+                rel="noreferrer"
+              >
+                @RubiconPerform
+              </a>
+            </div>
+          </article>
+          <article className="resources-item-card">
+            <div className="resources-item-media">
               <img src={athleticLogo} alt="The Athletic logo" loading="lazy" />
             </div>
             <div className="resources-item-content">
@@ -1245,27 +1270,6 @@ const App: React.FC = () => {
                 </a>
               </h3>
               <p className="resources-item-author">@RobertStock6</p>
-            </div>
-          </article>
-          <article className="resources-item-card">
-            <div className="resources-item-media">
-              <img src={rubiconProfile} alt="Rubicon Performance profile" loading="lazy" />
-            </div>
-            <div className="resources-item-content">
-              <h3>
-                <a className="resources-item-title-link" href="https://x.com/RubiconPerform" target="_blank" rel="noreferrer">
-                  Rubicon Performance
-                </a>
-              </h3>
-              <p className="resources-item-author">@RubiconPerform</p>
-              <a
-                className="resources-item-link"
-                href="https://www.rubicon-performance.com/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Website
-              </a>
             </div>
           </article>
           <article className="resources-item-card">

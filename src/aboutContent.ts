@@ -72,7 +72,7 @@ export const MEDIA: Entry[] = [
     url: 'https://www.youtube.com/watch?v=7j00kQjeA8o',
     source: 'Saberseminar',
     date: 'September 2026',
-    summary: 'Presented with Conner Pelletier.',
+    summary: 'Presented with Conner Pelletier. Bat path optimization for in-gym hitters.',
     logo: drivelineLogo,
   },
   {
